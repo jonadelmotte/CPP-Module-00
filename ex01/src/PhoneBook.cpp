@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/02 13:34:12 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/09/02 13:45:16 by jdelmott         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/PhoneBook.hpp"
 
 void PhoneBook::add_contact()
@@ -26,7 +38,6 @@ void    PhoneBook::srch_contact()
         std::cout << "Wich contact (index) would you like to display ?" << std::endl;
         std::getline(std::cin, get);
         num = std::atoi(get.c_str());
-        std::cout << "atoi = " << num << std::endl;
         if (num > 8 || num < 1)
             std::cout << "not a valid index" << std::endl;
         else if (!_contacts[num - 1].exist())
