@@ -5,24 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/02 13:33:54 by jdelmott          #+#    #+#              #
-#    Updated: 2026/09/09 11:37:14 by jdelmott         ###   ########.fr        #
+#    Created: 2026/09/09 10:28:37 by jdelmott          #+#    #+#              #
+#    Updated: 2026/09/09 10:41:10 by jdelmott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = account
 
-FILES = megaphone \
-
-SRC_DIR = src/
+FILES = tests Account \
 
 CCMAC = clang++
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
-
-INCLUDE = include/
 
 SRC = $(addsuffix .cpp, $(FILES))
 
@@ -35,10 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -g3 -o $(NAME)
-	@echo -e "$(GREEN)megaphone compiled !!$(RESET)"
-
-$(OBJ)%.o: %.cpp $(INCLUDE) Makefile
-	@$(CC) $(FLAGS) -c -g3 $< -o $@
+	@echo -e "$(GREEN)account compiled !!$(RESET)"
 
 clean:
 	@rm -rf $(OBJ)
