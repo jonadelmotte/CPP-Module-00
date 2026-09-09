@@ -6,13 +6,13 @@
 #    By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/02 13:34:15 by jdelmott          #+#    #+#              #
-#    Updated: 2026/09/09 10:47:08 by jdelmott         ###   ########.fr        #
+#    Updated: 2026/09/09 11:37:07 by jdelmott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-FILES = main Contact PhoneBook\
+FILES = main Contact PhoneBook stoi\
 
 SRC_DIR = src/
 OBJ_DIR = obj/
@@ -46,7 +46,7 @@ $(NAME): $(OBJ)
 	@echo -e "$(GREEN)PhoneBook compiled !!$(RESET)"
 
 $(OBJ_DIR)%.o: %.cpp $(INCLUDE) Makefile | $(OBJF)
-	@$(CCMAC) $(FLAGS) -c -g3 $< -o $@
+	@$(CC) $(FLAGS) -c -g3 $< -o $@
 
 clean:
 	@rm -rf $(OBJ)
