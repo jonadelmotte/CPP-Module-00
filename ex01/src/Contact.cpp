@@ -6,11 +6,16 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:06 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/02 13:34:07 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/09 10:47:16 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/contact.hpp"
+
+contact::contact()
+{
+    _exist = 0;
+}
 
 void    contact::set_info(int i)
 {

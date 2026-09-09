@@ -6,7 +6,7 @@
 #    By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/02 13:34:15 by jdelmott          #+#    #+#              #
-#    Updated: 2026/09/02 13:34:16 by jdelmott         ###   ########.fr        #
+#    Updated: 2026/09/09 10:47:08 by jdelmott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR = obj/
 
 CCMAC = clang++
 CC = c++
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 INCLUDE = include/
 
@@ -42,7 +42,7 @@ vpath %.cpp $(SRC_DIR)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CCMAC) $(FLAGS) $(OBJ) -g3 -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) -g3 -o $(NAME)
 	@echo -e "$(GREEN)PhoneBook compiled !!$(RESET)"
 
 $(OBJ_DIR)%.o: %.cpp $(INCLUDE) Makefile | $(OBJF)
