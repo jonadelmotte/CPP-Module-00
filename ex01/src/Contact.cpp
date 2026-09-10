@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:06 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:29:21 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 13:51:23 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void    contact::set_one_info(int type)
         {
             std::getline(std::cin, info[type]);
             if (!info[type].empty())
-                
+                break;
         }
     }
 }
@@ -35,15 +35,15 @@ void    contact::set_info(int i)
     _index = i + 1;
     _exist = 1;
     std::cout << "please enter first name : ";
-    std::getline(std::cin, info[FIRST_NAME]);
+    set_one_info(FIRST_NAME);
     std::cout << "please enter last name : ";
-    std::getline(std::cin, info[LAST_NAME]);
+    set_one_info(LAST_NAME);
     std::cout << "please enter nickname : ";
-    std::getline(std::cin, info[NICKNAME]);
+    set_one_info(NICKNAME);
     std::cout << "please enter phone number : ";
-    std::getline(std::cin, info[NUMBER]);
+    set_one_info(NUMBER);
     std::cout << "please enter darkest secret : ";
-    std::getline(std::cin, info[SECRET]);
+    set_one_info(SECRET);
 }
 
 bool contact::exist()
