@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:03 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/09 11:31:11 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 11:52:26 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public :
     int index;
 
     void add_contact();
+    void display_contacts();
     void srch_contact();
 } ;
 

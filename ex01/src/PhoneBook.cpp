@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:12 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/09 11:26:00 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 12:10:43 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ void PhoneBook::add_contact()
         index = 0;
 }
 
+void    PhoneBook::display_contacts()
+{
+    std::cout << "|-------------------------------------------|" << std::endl;
+    std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    for (int y = 0; _contacts[y].exist(); y++)
+    {
+        _contacts[y].display_info(0);
+        if (_contacts[y + 1].exist())
+            std::cout << "|----------|----------|----------|----------|" << std::endl;
+    }        
+    std::cout << "|-------------------------------------------|" << std::endl;
+
+}
+
 void    PhoneBook::srch_contact()
 {
     bool i;
@@ -33,6 +48,7 @@ void    PhoneBook::srch_contact()
         std::cout << "you don't have any contact\nplease creat at least one contact to use this option" << std::endl;
         return ;
     }
+    display_contacts();
     while (i)
     {
         std::cout << "Wich contact (index) would you like to display ?" << std::endl;
@@ -44,11 +60,7 @@ void    PhoneBook::srch_contact()
             std::cout << "this contact does not exist yet" << std::endl;
         else
         {
-            std::cout << "|-------------------------------------------|" << std::endl;
-	        std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	        std::cout << "|----------|----------|----------|----------|" << std::endl;
-            _contacts[num - 1].display_info();
-	        std::cout << "|-------------------------------------------|" << std::endl;
+            _contacts[num - 1].display_info(1);
             i = 0;
         }
     }

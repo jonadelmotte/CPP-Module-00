@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:33:59 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/09 11:23:04 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 11:56:08 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public :
     std::string info[5];
 
     void    set_info(int i);
-    void    display_info();
+    void    display_info(int i);
     void    display_info_debug();
     bool    exist();
 } ;
