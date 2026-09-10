@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:06 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:02:03 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 12:29:21 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 contact::contact()
 {
     _exist = 0;
+}
+
+void    contact::set_one_info(int type)
+{
+    if (type != NUMBER)
+    {
+        while (1)
+        {
+            std::getline(std::cin, info[type]);
+            if (!info[type].empty())
+                
+        }
+    }
 }
 
 void    contact::set_info(int i)
@@ -60,15 +73,6 @@ void contact::display_info(int i)
         std::cout << "Last name = " << info[LAST_NAME] << std::endl;
         std::cout << "Nickname = " << info[NICKNAME] << std::endl;
         std::cout << "Phone number = " << info[NUMBER] << std::endl;
-        std::cout << "Darkest secret = " << info[SECRET] << std::endl;
+        std::cout << "Darkest ecret = " << info[SECRET] << std::endl;
     }
-}
-
-void   contact::display_info_debug()
-{
-    std::cout << "first name = " << info[FIRST_NAME] << std::endl;
-    std::cout << "last name = " << info[LAST_NAME] << std::endl;
-    std::cout << "nickname = " << info[NICKNAME] << std::endl;
-    std::cout << "number = " << info[NUMBER] << std::endl;
-    std::cout << "darkest secret =  = " << info[SECRET] << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:12 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:10:43 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/10 12:23:23 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ void PhoneBook::add_contact()
 void    PhoneBook::display_contacts()
 {
     std::cout << "|-------------------------------------------|" << std::endl;
+    std::cout << "|              CONTATCS LIST :              |" << std::endl;
+    std::cout << "|-------------------------------------------|" << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-    for (int y = 0; _contacts[y].exist(); y++)
+    for (int y = 0; _contacts[y].exist() && y < 8; y++)
     {
         _contacts[y].display_info(0);
-        if (_contacts[y + 1].exist())
+        if (_contacts[y + 1].exist() && y < 7)
             std::cout << "|----------|----------|----------|----------|" << std::endl;
     }        
     std::cout << "|-------------------------------------------|" << std::endl;
