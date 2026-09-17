@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:33:59 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:24:58 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/17 10:55:46 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 #include <iomanip>
 #include <string>
 #include <cctype>
+#include "utils.hpp"
 
 class contact
 {
 private :
     int _index;
     bool _exist;
+    std::string _names[5];
 
 public :
     contact();

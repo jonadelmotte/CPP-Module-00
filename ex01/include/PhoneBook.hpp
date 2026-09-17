@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:03 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 11:52:26 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/17 10:46:06 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <cctype>
 
 #include "contact.hpp"
-#include "stoi.hpp"
 
 class PhoneBook
 {

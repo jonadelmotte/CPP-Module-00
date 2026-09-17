@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stoi.hpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 11:30:08 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/09 11:33:53 by jdelmott         ###   ########.fr       */
+/*   Created: 2026/09/09 11:25:16 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/09/17 10:52:06 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STOI_H
-# define STOI_H
+#include "../include/utils.hpp"
 
-#include <sstream>
+int stoi(const std::string & s) 
+{
+    int i = 0;
+    std::istringstream(s) >> i;
+    return i;
+}
 
-int stoi(const std::string & s);
+bool is_num(const std::string s)
+{
+    int i;
 
-#endif
+    i = 0;
+    while (s[i])
+    {
+        if (isdigit((int)s[i]) == 0 && s[i] != ' ')
+            return (1);
+        i++;
+    }
+    return (0);
+}

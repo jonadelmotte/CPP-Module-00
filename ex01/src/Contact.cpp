@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:06 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 13:51:23 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/17 11:06:04 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 contact::contact()
 {
     _exist = 0;
+    _names[FIRST_NAME] = "first name";
+    _names[LAST_NAME] = "last name";
+    _names[NICKNAME] = "nickname";
+    _names[NUMBER] = "phone number";
+    _names[SECRET] = "darkest secret";
 }
 
 void    contact::set_one_info(int type)
@@ -23,9 +28,22 @@ void    contact::set_one_info(int type)
     {
         while (1)
         {
+            std::cout << "please enter " << _names[type] << " :";
             std::getline(std::cin, info[type]);
             if (!info[type].empty())
-                break;
+                break ;
+        }
+    }
+    else
+    {
+        while (1)
+        {
+            std::cout << "please enter " << _names[type] << " :";
+            std::getline(std::cin, info[type]);
+            if (!info[type].empty() && is_num(info[type]) == 0)
+                break ;
+            if (is_num(info[type]) == 1)
+                std::cout << "The Phone number must be made of numeric characters" << std::endl;
         }
     }
 }
@@ -34,13 +52,9 @@ void    contact::set_info(int i)
 {
     _index = i + 1;
     _exist = 1;
-    std::cout << "please enter first name : ";
     set_one_info(FIRST_NAME);
-    std::cout << "please enter last name : ";
     set_one_info(LAST_NAME);
-    std::cout << "please enter nickname : ";
     set_one_info(NICKNAME);
-    std::cout << "please enter phone number : ";
     set_one_info(NUMBER);
     std::cout << "please enter darkest secret : ";
     set_one_info(SECRET);

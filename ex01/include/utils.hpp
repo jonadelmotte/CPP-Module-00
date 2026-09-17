@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stoi.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 11:25:16 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/09 11:33:58 by jdelmott         ###   ########.fr       */
+/*   Created: 2026/09/09 11:30:08 by jdelmott          #+#    #+#             */
+/*   Updated: 2026/09/17 10:51:14 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/stoi.hpp"
+#ifndef STOI_H
+# define STOI_H
 
-int stoi(const std::string & s) 
-{
-    int i = 0;
-    std::istringstream(s) >> i;
-    return i;
-}
+#include <sstream>
+#include <iostream>
+
+int stoi(const std::string & s);
+bool is_num(const std::string s);
+
+#endif

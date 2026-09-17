@@ -6,13 +6,13 @@
 #    By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/02 13:34:15 by jdelmott          #+#    #+#              #
-#    Updated: 2026/09/09 11:37:07 by jdelmott         ###   ########.fr        #
+#    Updated: 2026/09/17 10:41:49 by jdelmott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-FILES = main Contact PhoneBook stoi\
+FILES = main Contact PhoneBook utils \
 
 SRC_DIR = src/
 OBJ_DIR = obj/
