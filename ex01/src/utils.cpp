@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 11:25:16 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/17 10:52:06 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:46:44 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,23 @@ bool is_num(const std::string s)
             return (1);
         i++;
     }
+    return (0);
+}
+
+bool is_empty(const std::string s)
+{
+    int i;
+    int y;
+
+    y = 0;
+    i = 0;
+    while (s[i])
+    {
+        if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+            y++;
+        i++;
+    }
+    if (i == y)
+        return (1);
     return (0);
 }

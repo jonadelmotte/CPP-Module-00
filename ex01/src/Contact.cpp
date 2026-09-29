@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:06 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/17 11:06:04 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/29 12:02:12 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 contact::contact()
 {
     _exist = 0;
-    _names[FIRST_NAME] = "first name";
-    _names[LAST_NAME] = "last name";
-    _names[NICKNAME] = "nickname";
-    _names[NUMBER] = "phone number";
-    _names[SECRET] = "darkest secret";
+    _types[FIRST_NAME] = "first name";
+    _types[LAST_NAME] = "last name";
+    _types[NICKNAME] = "nickname";
+    _types[NUMBER] = "phone number";
+    _types[SECRET] = "darkest secret";
 }
 
 void    contact::set_one_info(int type)
@@ -28,19 +28,29 @@ void    contact::set_one_info(int type)
     {
         while (1)
         {
-            std::cout << "please enter " << _names[type] << " :";
+            std::cout << "please enter " << _types[type] << " :";
             std::getline(std::cin, info[type]);
-            if (!info[type].empty())
+            if (std::cin.fail())
+            {
+                std::cout << "error: getline failed" << std::endl;
+                exit (1);
+            }
+            if (!info[type].empty() && (is_empty(info[type])) == 0)
                 break ;
         }
     }
-    else
+    else if (type == NUMBER)
     {
         while (1)
         {
-            std::cout << "please enter " << _names[type] << " :";
+            std::cout << "please enter " << _types[type] << " :";
             std::getline(std::cin, info[type]);
-            if (!info[type].empty() && is_num(info[type]) == 0)
+            if (std::cin.fail())
+            {
+                std::cout << "error: getline failed" << std::endl;
+                exit (1);
+            }
+            if (!info[type].empty() && is_num(info[type]) == 0 && (is_empty(info[type])) == 0)
                 break ;
             if (is_num(info[type]) == 1)
                 std::cout << "The Phone number must be made of numeric characters" << std::endl;
@@ -56,7 +66,6 @@ void    contact::set_info(int i)
     set_one_info(LAST_NAME);
     set_one_info(NICKNAME);
     set_one_info(NUMBER);
-    std::cout << "please enter darkest secret : ";
     set_one_info(SECRET);
 }
 

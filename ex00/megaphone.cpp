@@ -6,12 +6,11 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:33:50 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:13:09 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:42:02 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //ex 01 ::
-//que des chiffres en phonnumber
 //pas de cases vides (\N ' ' (TT TYPES D'ESPAVES))
 //ctrl d
 

@@ -6,7 +6,7 @@
 /*   By: jdelmott <jdelmott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 13:34:12 by jdelmott          #+#    #+#             */
-/*   Updated: 2026/09/10 12:23:23 by jdelmott         ###   ########.fr       */
+/*   Updated: 2026/09/29 12:03:11 by jdelmott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void    PhoneBook::srch_contact()
     {
         std::cout << "Wich contact (index) would you like to display ?" << std::endl;
         std::getline(std::cin, get);
+        if (std::cin.fail())
+        {
+            std::cout << "error: getline failed" << std::endl;
+            exit (1);
+        }
         num = stoi(get.c_str());
         if (num > 8 || num < 1)
             std::cout << "not a valid index" << std::endl;
